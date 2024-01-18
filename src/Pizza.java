@@ -1,7 +1,13 @@
 public class Pizza {
-    private int price ;
-    private boolean veg ;
-
+    protected int price ;
+    protected boolean veg ;
+    protected int addToppings = 150;
+    protected int addCheese = 100;
+    protected int buyBag = 20;
+    //adding variables to check if the other items were added into the base pizza
+    protected boolean isToppingAdded = false;
+    protected boolean isCheeseAdded = false;
+    protected boolean isBagAdded = false;
 //constructor
     public Pizza(boolean veg){
         this.veg = veg ;
@@ -17,19 +23,41 @@ public class Pizza {
 
 
    //later on i will add more functionality like types of toppings etc
-    public int addToppings(boolean yes){
-        return this.price += 100;
+    public void addToppingsToTotal(){
+        this.isToppingAdded = true;
+     this.price += addToppings;
     }
 
-    public int addCheese(boolean yes){
-        return this.price += 100;
+    public void addCheeseToTotal(){
+        this.isCheeseAdded = true;
+    this.price += addCheese;
     }
 
-    public int addTakeAwayBag(boolean yes){
-        return this.price += 20;
+    public void addTakeAwayBag(){
+        this.isBagAdded = true;
+    this.price = buyBag;
     }
 
     public void calculatePrice(){
-        System.out.println(this.price);
+
+        String totalBill = "";
+
+        totalBill = "Plane Pizza Price = " + this.price + "\n" ;
+
+        if(isToppingAdded) {
+            totalBill += "Extra Toppings Added = " + this.addToppings + "\n";
+        }
+
+        if(isCheeseAdded) {
+            totalBill += "Extra Cheese Added = " + this.addCheese + "\n";
+        }
+
+        if(isBagAdded) {
+            totalBill += "Bag Price Added = " + this.isBagAdded + "\n";
+        }
+
+        totalBill +="Total Bill = " + this.price;
+
+        System.out.println(totalBill);
     }
 }
