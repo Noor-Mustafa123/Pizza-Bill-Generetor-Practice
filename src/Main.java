@@ -6,12 +6,15 @@ public class Main {
         Pizza Pizza1 = new Pizza(false);
         Pizza1.addToppingsToTotal();
         Pizza1.addCheeseToTotal();
-//        Pizza1.calculatePrice();
+        Pizza1.calculatePrice();
 
         //calling the deluxe pizza bill
         deluxePizza dp1 = new deluxePizza(true);
         dp1.calculatePrice();
-
+        //2nd try
+        Pizza1.calculatePrice();
+        //3rd try
+        dp1.calculatePrice();
     }
 
 }
