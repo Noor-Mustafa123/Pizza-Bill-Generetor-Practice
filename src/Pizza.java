@@ -5,10 +5,8 @@ import java.util.Map;
 public class Pizza {
     //    INSTANCE VARIABLES
     protected int price;
-    protected int planePizza = 300;
+    protected int planePizza;
     protected boolean veg;
-    protected int addToppings = 150;
-    protected int addCheese = 100;
     protected int buyBag = 20;
 
     //adding variables to check if the other items were added into the base pizza
@@ -53,7 +51,6 @@ public class Pizza {
         int toppingPrice = 0;
         if (toppingsType.containsKey(toppingName)) {
             toppingPrice = toppingsType.getOrDefault(toppingName, 0);
-//            this.price += toppingPrice;
         }
 
         return toppingPrice;
@@ -65,7 +62,6 @@ public class Pizza {
         int cheesePrice = 0;
         if (cheeseType.containsKey(cheeseName)) {
             cheesePrice = cheeseType.getOrDefault(cheeseName, 0);
-//            this.price += cheesePrice;
         }
 
         return cheesePrice;
@@ -89,7 +85,7 @@ public class Pizza {
 
     //TODO: add new booleans in here other then the ones in the instance variable section
     public void calculatePrice(String typeOfCheese ,String typeOfTopping){
-
+    // this is added to reset the price to base as well as adding the plane pizza price into the total at the same time
         this.price = this.planePizza;
 
         //adding the plane pizza price to the total

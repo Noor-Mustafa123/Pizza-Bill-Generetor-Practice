@@ -14,13 +14,11 @@ public class Main {
         Pizza2.addaTopping("Chicken");
         Pizza2.calculatePrice("Cheddar","Chicken");
         Pizza2.calculatePrice("Cheddar","Chicken");
-//        //calling the deluxe pizza bill
-//        deluxePizza dp1 = new deluxePizza(true);
-//        dp1.calculatePrice();
-//        //2nd try
-//        Pizza1.calculatePrice();
-//        //3rd try
-//        dp1.calculatePrice();
+//deluxe pizza object
+        deluxePizza dp1 = new deluxePizza(true,"Chicken","Cheddar");
+        dp1.calculatePrice();
+        //2nd try
+        dp1.calculatePrice();
     }
 
 }

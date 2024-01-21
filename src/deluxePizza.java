@@ -1,58 +1,54 @@
-//public class deluxePizza extends Pizza {
-//    protected int deluxePrice = 500;
-//    public deluxePizza(boolean veg) {
-//        super(veg);
-//        if(this.veg){
-//            this.deluxePrice = 500;
-//        }
-//        else{
-//            this.deluxePrice = 800;
-//        }
-//        super.addCheeseToTotal();
-//        super.addToppingsToTotal();
-//    }
-//    //overwrite methods so that duplicate cheese and toppings are not added into the bill
-//
-//    @Override
-//    public void addToppingsToTotal() {
-//        //keeping the methods empty to stop duplicate
-//
-//    }
-//
-//    @Override
-//    public void addCheeseToTotal() {
-//        //keeping the methods empty to stop duplicate
-//    }
-//
-//    @Override
-//    public void calculatePrice() {
-//
-//        this.price = 0;
-//
-//            String totalBill = "";
-//
-//            totalBill = "Deluxe Pizza Price = " + this.deluxePrice + "\n" ;
-//            //adding the deluxe price to the total
-//            this.price += this.deluxePrice;
-//
-//            if(isToppingAdded) {
-//                totalBill += "Extra Toppings Added = " + this.addToppings + "\n";
-//                this.price += this.addToppings;
-//            }
-//
-//            if(isCheeseAdded) {
-//                totalBill += "Extra Cheese Added = " + this.addCheese + "\n";
-//                this.price += this.addCheese;
-//            }
-//
-//            if(isBagAdded) {
-//                totalBill += "Bag Price Added = " + this.isBagAdded + "\n";
-//                this.price += this.buyBag;
-//            }
-//
-//            totalBill +="Total Bill = " + this.price + "\n";
-//
-//            System.out.println(totalBill);
-//        }
-//    }
+public class deluxePizza extends Pizza {
+    protected int deluxePrice;
+    protected String typeOfTopping;
+    protected String typeOfCheese;
+    public deluxePizza(boolean veg,String typeOfTopping,String typeOfCheese) {
+        super(veg);
+        this.typeOfTopping = typeOfTopping;
+        this.typeOfCheese = typeOfCheese;
+
+        if(this.veg){
+            this.deluxePrice = 500;
+        }
+        else{
+            this.deluxePrice = 800;
+        }
+        super.addaTopping(typeOfTopping);
+        super.addaCheese(typeOfCheese);
+    }
+
+
+
+
+    public void calculatePrice() {
+
+        this.price = this.deluxePrice;
+
+        //adding the plane pizza price to the total
+        String totalBill = "Deluxe Pizza Price = " + this.deluxePrice + "\n";
+
+        if(isToppingAdded) {
+            int toppingPrice = toppingsType.getOrDefault(typeOfTopping,0);
+            this.price += toppingPrice;
+            totalBill += "Extra "+typeOfTopping+" Toppings Added = " + toppingPrice + "\n";
+        }
+
+
+        if(isCheeseAdded) {
+            int cheesePrice = cheeseType.getOrDefault(typeOfCheese,0);
+            this.price += cheesePrice;
+            totalBill += "Extra "+typeOfCheese+" Cheese Added = " + cheesePrice + "\n";
+        }
+
+        if(isBagAdded) {
+            totalBill += "Bag Price Added = " + this.buyBag + "\n";
+            this.price += this.buyBag;
+        }
+
+
+        totalBill +="Total Bill = " + this.price + "\n";
+
+        System.out.println(totalBill);
+        }
+    }
 
