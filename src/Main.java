@@ -6,14 +6,14 @@ public class Main {
         Pizza Pizza1 = new Pizza(false);
         Pizza1.addaCheese("Mozzarella");
         Pizza1.addaTopping("Peperoni");
-        Pizza1.calculatePrice("Mozzarella","Peperoni");
-        Pizza1.calculatePrice("Cheddar","Chicken");
+        Pizza1.addTheCoupon(5678);
+        Pizza1.calculatePrice(4);
 // 2nd object
         Pizza Pizza2 = new Pizza(true);
         Pizza2.addaCheese("Cheddar");
         Pizza2.addaTopping("Chicken");
-        Pizza2.calculatePrice("Cheddar","Chicken");
-        Pizza2.calculatePrice("Cheddar","Chicken");
+        Pizza2.addTheCoupon(1234);
+        Pizza2.calculatePrice(2);
 //deluxe pizza object
         deluxePizza dp1 = new deluxePizza(true,"Chicken","Cheddar");
         dp1.calculatePrice();
