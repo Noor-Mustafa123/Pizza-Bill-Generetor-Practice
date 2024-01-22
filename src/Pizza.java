@@ -67,17 +67,6 @@ public class Pizza {
         return cheesePrice;
     }
 
-//    //later on i will add more functionality like types of toppings etc
-//    public void addToppingsToTotal() {
-//        this.isToppingAdded = true;
-//        this.price += addToppings;
-//    }
-//
-//    public void addCheeseToTotal() {
-//        this.isCheeseAdded = true;
-//        this.price += addCheese;
-//    }
-
     public void addTakeAwayBag() {
         this.isBagAdded = true;
         this.price += buyBag;
